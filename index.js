@@ -61,4 +61,4 @@ function createStars(numStars) {
       }, 300);
     });
 
-    
+    let buttonNextPage = document.getElementsByName

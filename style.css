@@ -1,12 +1,13 @@
 body {
   margin: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: radial-gradient(circle at center, #1a0026 10%, #0a0420 50%, #02000a 90%);
   overflow: hidden;
   position: relative;
+
 }
 
     .ripple {
@@ -397,10 +398,10 @@ input[type="email"]:focus {
 	justify-content: center;
 	align-items: center;
 text-align: center;
-font-size: 150%;
+font-size: 30px;
 padding: 10px;
 font-style: italic;
-   width: 53%;
+   width: 200px;
    height: 100px;
    margin: 20px;
    background-color: #6a6384;
@@ -415,10 +416,34 @@ font-style: italic;
 }
 
 .button-next:active{
-   width: 50%;
+   width: 190px;
    height: 90px;
    margin: 10px;
    background-color: #693636;
+}
+
+@media screen and (max-width: 470px) {
+.button-next {
+   width: 150px;
+   font-size: 25px;
+  }
+
+}
+
+@media screen and (max-width: 370px) {
+.button-next {
+   width: 120px;
+   font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 310px) {
+.button-next {
+   width: 100px;
+   font-size: 18px;
+  }
+
 }
 
 
