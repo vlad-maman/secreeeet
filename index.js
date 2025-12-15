@@ -1,11 +1,4 @@
 
-    let but =  document.getElementById('submit')
-
-
-    function lol(){
-    alert('хапушеня')
-}
-
 
     function sendEmail(){
       let params = {
@@ -23,8 +16,6 @@
 
       
     }
-
-
 
 
 function createStars(numStars) {
@@ -61,4 +52,35 @@ function createStars(numStars) {
       }, 300);
     });
 
-    let buttonNextPage = document.getElementsByName
+    let buttonNextPage = document.querySelector(".next-reg")
+    let buttonNextBackstage = document.querySelector('.next-beg')
+    let InformatiouDoZayzvu = document.querySelector(".InformatiouDoZayzvu")
+
+    let ConteinerInformation = document.querySelector(".information-con")
+    let ZayavkaMain = document.querySelector('.main')
+
+    let GoBackBut = document.querySelector(".GoBackBut")
+
+   
+
+
+    InformatiouDoZayzvu.addEventListener("click", function(){
+              buttonNextPage.style.display = "flex"
+              buttonNextBackstage.style.display = "flex"
+    })
+   
+
+    buttonNextPage.addEventListener("click", function(){
+      ConteinerInformation.style.display = "none";
+      ZayavkaMain.style.display = "flex"
+    })
+
+    buttonNextBackstage.addEventListener('click', function(){
+
+    })
+
+    GoBackBut.addEventListener("click", function(){
+       ZayavkaMain.style.display = "none"
+        ConteinerInformation.style.display = "flex";
+     
+    })
