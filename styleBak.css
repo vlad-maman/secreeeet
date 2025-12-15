@@ -325,3 +325,52 @@ body {
   transition: all ease 0.8s;
   opacity: 1;
 }
+
+
+
+
+.back{
+
+		display: flex;
+	justify-content: center;
+	align-items: center;
+text-align: center;
+font-size: 20px;
+padding: 15px;
+font-style: italic;
+   width: 200px;
+   height: 60px;
+   font-weight: 1000;
+   margin: 20px;
+   background-color: #b7b3c7;
+   transition: all 100ms;
+   border-radius: 20px;
+   cursor: pointer;
+   color: #0c101b;
+   text-decoration: none;
+}
+
+
+.back:hover{
+
+   background-color: #8d554d;
+}
+
+.back:active{
+transform: scale(0.95);
+   background-color: #693636;
+}
+
+
+.buttons-back{
+  display: flex;
+  align-items:center;
+  position: absolute;
+  flex-direction: column;
+max-width: fit-content;
+  min-height: auto;
+  flex-wrap: wrap;
+  z-index: 10;
+  right: 5%;
+  top: 28%;
+}

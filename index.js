@@ -68,6 +68,15 @@ function createStars(numStars) {
               buttonNextPage.style.display = "flex"
               buttonNextBackstage.style.display = "flex"
     })
+
+
+     function loloo(){
+              buttonNextPage.style.display = "flex"
+              buttonNextBackstage.style.display = "flex"
+    }
+
+    loloo()
+
    
 
     buttonNextPage.addEventListener("click", function(){

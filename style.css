@@ -447,12 +447,14 @@ transform: scale(0.95);
 .con-buttons{
 	display: flex;
 	position: absolute;
-	bottom: 26%;
+	bottom: 18%;
+	width: 470px;
 	justify-content: center;
 	align-items: center;
 	max-width: fit-content;
 	max-height: fit-content;
 	background-color: transparent;
+	flex-wrap: wrap;
 }
 
 
