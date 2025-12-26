@@ -1,22 +1,63 @@
+async function sendEmail() {
+    const btn = document.getElementById('submit');
+    const fileInput = document.getElementById('file-upload');
+    const file = fileInput.files[0];
+    
+    const CLOUD_NAME = 'dh0dveabe'; 
+    const UPLOAD_PRESET = 'unsigned_preset';
 
+    btn.disabled = true;
+    btn.innerText = "Завантаження фото...";
 
-    function sendEmail(){
-      let params = {
-        from_name: document.getElementById('username').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('confirm-message').value
-      }
+    try {
+        let photoUrl = "Фото не додано";
 
-     console.log(params)
+        if (file) {
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', UPLOAD_PRESET);
 
-      emailjs.send("service_ap3mpds","template_daxfhbe", params) 
-      .then(function(){
-        alert('ПОВІДОМЛЕННЯ УСПІШНО ВІДПРАВЛЕННО 😉' )
-      })
+            const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+                method: 'POST',
+                body: formData
+            });
 
-      
+            const data = await response.json();
+            if (data.secure_url) {
+                photoUrl = data.secure_url;
+            } else {
+                throw new Error('Помилка завантаження на хмару');
+            }
+        }
+
+        btn.innerText = "Відправка листа...";
+
+        let params = {
+            from_name: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('confirm-message').value,
+            photo: photoUrl 
+        };
+
+        await emailjs.send("service_ap3mpds", "template_daxfhbe", params);
+        
+        alert('Успішно відправлено! 😉');
+
+        // --- ОЧИЩЕННЯ ФОРМИ ---
+        document.getElementById('username').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('confirm-message').value = "";
+        fileInput.value = ""; // Очищаємо вибраний файл
+        // ----------------------
+        
+    } catch (error) {
+        console.error(error);
+        alert('Помилка: ' + error.message);
+    } finally {
+        btn.disabled = false;
+        btn.innerText = "Відправити Повідомлення";
     }
-
+}
 
 function createStars(numStars) {
       for (let i = 0; i < numStars; i++) {

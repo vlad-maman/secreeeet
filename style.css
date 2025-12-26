@@ -77,7 +77,7 @@ main{
   display: block;
     background: rgba(3, 3, 55, 0.5);
     width: 18.75rem;
-    height: 25rem;
+    height: 29rem;
     margin: auto;
     position: absolute;
     top: 0;
@@ -85,6 +85,29 @@ main{
     right: 0;
     bottom: 0;
     z-index: 9;
+}
+
+
+.neznay{
+background: url(1644267758_9-abrakadabra-fun-p-ramki-dlya-oformleniya-teksta-cherno-belie-15.png) ;
+display: flex;
+ position: absolute;
+  top: 48%;
+   left: 49%;
+    transform: translate(-50%, -50%);
+	 background-size: cover;
+	  z-index: 7;
+	   width: 600px;
+	    height: 750px;
+		 filter: drop-shadow(10px 15px 1px rgba(235, 233, 233, 0.25));
+  }
+
+
+@media screen and (max-width: 600px) {
+.neznay{
+opacity: 0;
+  }
+
 }
 
 header {
@@ -105,6 +128,39 @@ fieldset {
 }
 
 
+.koshechka{
+	background: url(1294968.png); 
+	width: 350px;
+	 height: 350px;
+	  display: flex;
+	   position: absolute;
+	    left: -10%;
+   bottom: -1%;
+    background-size: cover;
+	 z-index: 7; 
+	   filter:   drop-shadow(10px 15px 1px rgba(199, 25, 25, 0.25))
+ ;
+}
+
+.koshechka-lapa1{
+	background: url(1996623.png); width: 100px; height: 100px; display: flex; position: absolute; right: 10%;
+   top: 15%; background-size: cover; z-index: 7; transform: rotate(-160deg);
+}
+.koshechka-lapa2{
+	background: url(1996623.png); width: 100px; height: 100px; display: flex; position: absolute; right: 22%;
+   top: 22%; background-size: cover; z-index: 7; transform: rotate(-160deg);
+}
+
+
+@media screen and (max-width: 870px) {
+	.koshechka-lapa{
+  display: none;
+  }
+.koshechka {
+   display: none;
+  }
+
+}
 
 button {
     background: rgba(235, 30, 54, 1);
@@ -117,6 +173,11 @@ button {
     cursor: pointer;
     text-align: center;
     justify-content: center;
+}
+
+#file-upload{
+	width: 62%;
+
 }
 
 input, textarea {
